@@ -1,0 +1,33 @@
+.participant-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .participant-card {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .participant-summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .participant-details {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .remove-btn {
+    margin-top: 0.5rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

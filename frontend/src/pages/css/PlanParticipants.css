@@ -1,0 +1,68 @@
+/* 전체 컨테이너 */
+.participants-page-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f8f8ff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 참가자 목록 */
+.participant-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 각 참가자 카드 */
+.participant-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.participant-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 클릭 가능한 참가자 요약 */
+.participant-summary {
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #f0f4ff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 확장된 상세 정보 */
+.participant-details {
+  padding: 12px;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* 삭제 버튼 */
+.remove-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #d9363e;
+}
+
+/* 간단한 fade 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

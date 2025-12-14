@@ -1,0 +1,371 @@
+/* 전체 페이지 레이아웃 (3단 그리드) */
+.page-container {
+  max-width: 1300px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 240px 1fr 280px; /* 왼쪽 사이드바 | 메인 콘텐츠 | 오른쪽 사이드바 */
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* 왼쪽 필터 사이드바 */
+.left-sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* '계획 작성' 버튼을 감싸는 박스 스타일 */
+.create-plan-box {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.create-plan-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #228b22;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-plan-btn:hover {
+  background-color: #1a681a;
+}
+
+.filter-group {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.filter-group h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.filter-btn {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f1f3f5;
+}
+
+.filter-btn.active {
+  background-color: #2c3e50;
+  color: #fff;
+  border-color: #2c3e50;
+  font-weight: 600;
+}
+
+
+/* 메인 콘텐츠 */
+.planlist-wrapper {
+  max-width: 100%;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.list-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.list-title {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sort-option {
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sort-option:hover {
+  color: #000;
+}
+
+.sort-option.active {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.sort-separator {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.plan-list-container {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  flex-grow: 1;
+}
+
+.plan-list-header,
+.plan-list-item {
+  display: grid;
+  grid-template-columns: 1.2fr 4fr 1.5fr 1.2fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.plan-list-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  font-size: 0.95rem;
+}
+
+.plan-list-item {
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f1f3f5;
+  cursor: pointer;
+}
+
+.plan-list-item:last-child {
+  border-bottom: none;
+}
+
+.plan-list-item:hover {
+  background-color: #f8f9fa;
+}
+
+.item-title {
+  font-weight: 500;
+  color: #212529;
+  text-align: left;
+}
+
+.item-destination,
+.item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 오른쪽 인기 게시물 사이드바 */
+.top-posts-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.2rem;
+  border: 1px solid #e9ecef;
+}
+
+.top-posts-sidebar h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.top-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.top-posts-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.2rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.top-posts-list li:last-child {
+  border-bottom: none;
+}
+
+.top-posts-list li:hover {
+  background-color: #e9ecef;
+}
+
+.top-post-rank {
+  font-weight: 600;
+  color: #495057;
+  width: 2em;
+}
+
+.top-post-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.5rem;
+  color: #212529;
+}
+
+.top-post-views {
+  font-size: 0.85rem;
+  color: #868e96;
+}
+
+/* === 추가/수정된 CSS === */
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.left-sidebar .search-input {
+  flex: 1;
+  min-width: 0;
+  height: 44px; /* 버튼 높이와 동일하게 수정 */
+  padding: 0.7rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.left-sidebar .search-input:focus {
+  outline: none;
+  border-color: #2c3e50;
+  box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
+}
+
+.search-btn {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2c3e50;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #3b526a;
+}
+
+.location-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.7rem 0.2rem;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #343a40;
+  cursor: pointer;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s;
+}
+
+.location-category-header:hover {
+  background-color: #f1f3f5;
+}
+
+.location-category-header .arrow {
+  font-size: 0.8rem;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+  background-color: #fdfdfd;
+}
+
+.collapsible-content.open {
+  max-height: 500px;
+  padding-top: 0.5rem;
+}
+
+.collapsible-content .filter-btn {
+  margin-bottom: 0.4rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #868e96;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  color: #868e96;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  color: #212529;
+}
+
+.pagination-btn:disabled {
+  color: #ced4da;
+  cursor: not-allowed;
+}
+
+.pagination-btn.active {
+  color: #2c3e50;
+  font-weight: 700;
+}

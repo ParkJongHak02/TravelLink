@@ -1,0 +1,166 @@
+/* ----- 전역 및 기본 스타일 ----- */
+:root {
+  --primary-color: #2e7d32;
+  --primary-light-color: #e8f5e9;
+  --secondary-color: #42a5f5;
+  --danger-color: #c62828;
+  --danger-light-color: #fdecea;
+  --text-color-dark: #2d3748;
+  --text-color-light: #555;
+  --border-color: #e0e0e0;
+  --background-color-light: #f7f9fc;
+  --background-color-white: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --border-radius: 0;
+}
+
+#planDetailContainer {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 850px) 1fr;
+  gap: 2rem;
+  padding: 0 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#planDetailContainer .detail-left-sidebar {
+  grid-column: 1 / 2;
+  width: 320px;
+  justify-self: end;
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#planDetailContainer .detail-main-content {
+  grid-column: 2 / 3;
+  background-color: var(--background-color-white);
+  border-radius: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  min-width: 0;
+}
+
+/* ----- 헤더 ----- */
+#planDetailContainer .plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+#planDetailContainer .plan-header-title h2 { font-size: 2.25rem; font-weight: 800; margin: 0; line-height: 1.2; }
+#planDetailContainer .plan-owner-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+/* ----- 여행 개요 카드 ----- */
+#planDetailContainer .info-card { background: var(--background-color-white); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+#planDetailContainer .info-card h3 { margin: 0 0 1.5rem 0; font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; }
+#planDetailContainer .info-item { display: flex; align-items: flex-start; margin-bottom: 1.25rem; }
+#planDetailContainer .info-item label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700 !important;
+  color: var(--text-color-light);
+  margin-bottom: 0.25rem;
+}
+#planDetailContainer .info-item p { margin: 0; font-size: 1rem; font-weight: 500; }
+#planDetailContainer .tags-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+#planDetailContainer .tag {
+  background-color: #f1f3f5;
+  color: var(--text-color-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+#planDetailContainer .apply-section { background: var(--background-color-white); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+
+/* ----- 상세 일정 섹션 ----- */
+#planDetailContainer .plan-itinerary-section h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+#planDetailContainer .summary-card {
+  background: var(--background-color-white);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 0;
+}
+#planDetailContainer .summary-card h4 { margin: 0 0 0.5rem 0; color: var(--text-color-dark); }
+#planDetailContainer .summary-card p { margin: 0; color: #333; }
+#planDetailContainer .day-selector-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+#planDetailContainer .day-selector-btn { padding: 0.75rem 1rem; border: none; background-color: transparent; cursor: pointer; font-size: 1rem; font-weight: 600; color: var(--text-color-light); border-bottom: 3px solid transparent; margin-bottom: -1px; transition: all 0.2s ease-in-out; }
+#planDetailContainer .day-selector-btn:hover { color: var(--text-color-dark); background-color: var(--background-color-light); }
+#planDetailContainer .day-selector-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+#planDetailContainer .itinerary-day-card { background: var(--background-color-white); border-radius: var(--border-radius); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--shadow-sm); }
+#planDetailContainer .itinerary-list { list-style: none; padding: 0; margin: 0; }
+#planDetailContainer .itinerary-list li { display: flex; padding: 1rem 1.5rem; gap: 1.5rem; align-items: flex-start; }
+#planDetailContainer .itinerary-list li:last-child { border-bottom: none; }
+
+/* ✅ '시간' 스타일 수정 */
+#planDetailContainer .time-tag { 
+  font-weight: 700; 
+  color: var(--text-color-dark); /* 검은색 계열 글씨로 변경 */
+  background-color: transparent; /* 배경 제거 */
+  padding: 0; /* 패딩 제거 */
+  height: fit-content;
+  white-space: nowrap;
+}
+#planDetailContainer .activity-content { flex: 1; }
+#planDetailContainer .activity-content .activity-title { margin: 0 0 0.25rem 0; font-weight: 600; }
+#planDetailContainer .activity-content .activity-memo { margin: 0; font-size: 0.9rem; color: var(--text-color-light); }
+
+/* ----- 버튼 스타일 ----- */
+#planDetailContainer .btn { padding: 0.6rem 1.25rem; font-size: 0.95rem; border: none; border-radius: 0; cursor: pointer; transition: all 0.2s ease; font-weight: 600; display: inline-block; text-align: center; width: 100%; }
+#planDetailContainer .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+#planDetailContainer .btn-primary:hover {
+  background-color: #1a681a;
+}
+#planDetailContainer .btn-secondary { background-color: #f1f3f5; color: #495057; border: 1px solid #dee2e6; }
+#planDetailContainer .btn-secondary:hover { background-color: #e9ecef; }
+#planDetailContainer .btn-danger { background-color: var(--danger-light-color); color: var(--danger-color); }
+#planDetailContainer .btn-danger:hover { background-color: #f8d7da; }
+#planDetailContainer .btn-disabled { background-color: #e0e0e0; color: #9e9e9e; cursor: not-allowed; }
+#planDetailContainer .plan-owner-actions .btn { width: auto; }
+
+/* ----- 반응형 디자인 ----- */
+@media (max-width: 1200px) {
+  #planDetailContainer {
+    grid-template-columns: 320px 1fr;
+    padding: 0 1.5rem;
+  }
+  #planDetailContainer .detail-left-sidebar {
+    grid-column: 1 / 2;
+    justify-self: start;
+  }
+  #planDetailContainer .detail-main-content {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (max-width: 992px) {
+  #planDetailContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0;
+    gap: 1.5rem;
+  }
+  #planDetailContainer .detail-left-sidebar {
+    position: static;
+    width: 100%;
+    order: 2;
+    margin-top: 0;
+  }
+  #planDetailContainer .detail-main-content {
+      order: 1;
+  }
+  #planDetailContainer .plan-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+  }
+}

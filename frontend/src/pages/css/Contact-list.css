@@ -1,0 +1,124 @@
+.contact-list-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-list-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.contact-table th,
+.contact-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact-table td {
+  background-color: #fff;
+}
+
+.contact-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.contact-table tr:hover {
+  background-color: #f3f3f3;
+}
+
+input[type="text"] {
+  padding: 6px 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.contact-table td[colspan="5"] {
+  font-size: 14px;
+  line-height: 1.6;
+  border-top: none;
+}
+
+/* 상세 내용 숨김/펼침 애니메이션 + 스크롤 */
+.expanded-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.expanded-content.open {
+  max-height: 400px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* ✅ 버튼 스타일 클래스 분리 */
+.contact-btn {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.contact-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn {
+  color: gray;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancel-btn:hover {
+  text-decoration: underline;
+}
+
+.delete-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #c62828;
+}

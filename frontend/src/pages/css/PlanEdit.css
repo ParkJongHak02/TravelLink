@@ -1,0 +1,127 @@
+.plan-edit-page {
+  background-color: #ffffff; 
+  min-height: 100vh;
+  padding: 2rem 0 4rem 0;
+}
+
+.plan-edit-header {
+  max-width: 1100px;
+  margin: 0 auto; 
+  padding: 0 0.5rem;
+  margin-bottom: 1rem; 
+}
+
+.plan-edit-header h2 {
+  color: #333333; 
+  font-size: 1.8rem; 
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.plan-edit-container {
+  max-width: 1100px;
+  margin: 0 auto; 
+  position: relative;
+  padding: 3.5rem;
+  border: 1px solid #e0e0e0; 
+  border-top: 4px solid #2e7d32;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+
+.plan-edit-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.plan-edit-form .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.4rem;
+}
+
+/* form-row와 form-field의 마지막 자식 요소는 하단 마진을 제거하여 버튼과의 간격을 조절합니다. */
+.plan-edit-form .form-row:last-of-type,
+.plan-edit-form .form-field:last-of-type {
+    margin-bottom: 0;
+}
+
+.plan-edit-form label {
+  font-weight: 600;
+  font-size: 0.9rem; 
+  margin-bottom: 0.3rem;
+  color: #333333; 
+}
+
+.plan-edit-form input,
+.plan-edit-form textarea {
+  padding: 0.6rem 0.9rem; 
+  font-size: 0.9rem; 
+  color: #333333;
+  border: 1px solid #e0e0e0; 
+  border-radius: 6px; 
+  background-color: #ffffff !important;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  box-shadow: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- 이 부분을 추가했습니다: 수정 불가능한 input 스타일 --- */
+.plan-edit-form input[readOnly] {
+  background-color: #eeeeee !important;
+  cursor: default;
+  color: #555555;
+}
+
+.plan-edit-form input:focus,
+.plan-edit-form textarea:focus {
+  outline: none;
+  border-color: #a0a0a0;
+  box-shadow: none;
+}
+
+.plan-edit-form textarea {
+  resize: none;
+  height: 240px;
+  line-height: 1.5;
+}
+
+.plan-edit-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem; /* 버튼과 마지막 필드 사이의 간격을 늘렸습니다. */
+  gap: 0.8rem;
+}
+
+.plan-edit-buttons button {
+  width: auto;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plan-edit-buttons .save-btn {
+  background: #2e7d32;
+}
+
+.plan-edit-buttons .save-btn:hover {
+  background: #388e3c;
+}
+
+.plan-edit-buttons .cancel-btn {
+  background-color: #888888;
+}
+
+.plan-edit-buttons .cancel-btn:hover {
+  background-color: #a0a0a0;
+}

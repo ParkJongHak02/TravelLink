@@ -1,0 +1,240 @@
+/* ===== 기본(풀페이지로 직접 접근 시) ===== */
+.find-username-container {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.find-username-box {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.find-username-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #4e7044;
+  margin-bottom: 2rem;
+}
+
+/* 입력/버튼 – 기본(페이지) */
+.find-username-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #98BD64;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+.find-username-input:focus {
+  outline: none;
+  border-color: #7DA94D;
+  box-shadow: 0 0 0 3px rgba(125,169,77,0.2);
+}
+
+.find-username-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #98BD64;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.find-username-button:hover { background: #85aa54; }
+
+.find-username-message {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: #4e7044;
+  font-weight: 600;
+}
+
+.find-username-footer {
+  font-size: .9rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #555;
+}
+.find-username-footer a {
+  color: #98BD64;
+  font-weight: 500;
+  text-decoration: none;
+}
+.find-username-footer a:hover { text-decoration: underline; }
+
+/* ===== 모달로 열릴 때만 적용되는 오버라이드 ===== */
+.modal-body .find-username-container {
+  min-height: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  padding: 0 !important;
+  overflow: visible !important;  /* 잘림 방지 */
+}
+
+/* 카드 폭/여백은 카드에서만 관리 (한 번만 선언) */
+.modal-body .find-username-box{
+  width: 440px !important;                         /* 420~480px 사이 취향대로 */
+  max-width: calc(100vw - 64px) !important;        /* 좌우 32px 여유 */
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08) !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;                         /* flex 문맥 넘침 방지 */
+}
+
+/* 내부 유닛이 카드 밖으로 안 나가도록 */
+.modal-body .find-username-input,
+.modal-body .find-username-button{
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+/* 각짐 + 색상 톤 통일(#888 테두리 / 버튼 #228b22) */
+.modal-body .find-username-input{
+  border: 1px solid #888888 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.modal-body .find-username-input:focus{
+  outline: none !important;
+  border-color: #888888 !important;
+  box-shadow: 0 0 0 2px rgba(136,136,136,0.15) !important;
+}
+.modal-body .find-username-button{
+  border-radius: 0 !important;
+  background: #228b22 !important;
+  border: 2px solid #228b22 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.modal-body .find-username-button:hover { filter: brightness(0.95); }
+
+/* 하단 링크는 텍스트 링크만 (#228b22) */
+.modal-body .find-username-footer a{
+  display: inline !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  color: #228b22 !important;
+  text-decoration: none !important;
+}
+.modal-body .find-username-footer a:hover{ text-decoration: underline !important; }
+
+/* 작은 화면에서 더 타이트하게 */
+@media (max-width: 480px){
+  .modal-body .find-username-box{
+    width: 92vw !important;
+    max-width: 92vw !important;
+    padding: 1.25rem !important;
+  }
+}
+
+/* ====== 모달에서만 적용 ====== */
+
+/* 모달 컨테이너는 껍데기처럼만 동작 (스크롤/여백 없음) */
+.modal-body .find-username-container{
+  min-height: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+/* 카드 자체가 폭을 관리: 뷰포트에서 항상 여유 남도록 */
+.modal-body .find-username-box{
+  width: 380px !important;                       /* 기본 카드 폭 */
+  max-width: min(92vw, 420px) !important;        /* 작은 화면 보호 */
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08) !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;                 /* 카드 내부 가로 스크롤 금지 */
+  min-width: 0 !important;                       /* flex 문맥 누수 방지 */
+}
+
+/* 내부 유닛은 카드 폭을 절대 넘지 않게 */
+.modal-body .find-username-box *{
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 입력/버튼 폭 통일 + 각짐 + 색상 톤 */
+.modal-body .find-username-input,
+.modal-body .find-username-button{
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.modal-body .find-username-input{
+  border: 1px solid #888888 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+.modal-body .find-username-input:focus{
+  outline: none !important;
+  border-color: #888888 !important;
+  box-shadow: 0 0 0 2px rgba(136,136,136,0.15) !important;
+}
+
+.modal-body .find-username-button{
+  border-radius: 0 !important;
+  background: #228b22 !important;
+  border: 2px solid #228b22 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+.modal-body .find-username-button:hover{ filter: brightness(0.95); }
+
+/* 하단 링크는 ‘텍스트 링크’만 보이게 (#228b22) */
+.modal-body .find-username-footer a{
+  display: inline !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  color: #228b22 !important;
+  text-decoration: none !important;
+}
+.modal-body .find-username-footer a:hover{ text-decoration: underline !important; }
+
+/* 작은 화면에서 더 타이트하게 */
+@media (max-width: 480px){
+  .modal-body .find-username-box{
+    width: 92vw !important;
+    max-width: 92vw !important;
+    padding: 1.25rem !important;
+  }
+}
